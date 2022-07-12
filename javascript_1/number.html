@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js number constants</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      //js nan constant//
+      let hhh = 100 / "apple";
+      console.log(hhh);
+
+      //number//
+      let g = 100 / 0;
+      console.log(g);
+
+      //finite value//
+      let x = 0;
+      let y = 1;
+      let z = 1;
+      console.log(Number.isFinite(x));
+      console.log(Number.isFinite(y / x));
+      console.log(Number.isFinite(z / y));
+
+      //number is integer method//
+      let a = Number.isInteger(10);
+      let b = Number.isInteger(-10);
+      let c = Number.isInteger(5.9);
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+      //number is float//
+      let aa = "50";
+      let bb = "50.25";
+      let cc = "string";
+      let dd = "50string";
+      let ee = "50.25string";
+      console.log(Number.parseFloat(aa));
+      console.log(Number.parseFloat(bb));
+      console.log(Number.parseFloat(cc));
+      console.log(Number.parseFloat(dd));
+      console.log(Number.parseFloat(ee));
+
+      //parseint//
+      let value = 98.9721;
+      console.log(value.toFixed());
+      let aaa = 97.5;
+      console.log(aaa.toFixed(1));
+
+      //precision//
+      let num = 98.9721;
+      console.log(num.toPrecision());
+      console.log(num.toPrecision(2));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="deal"></p>
+    <p id="vehicle"></p>
+    <p id="fruits"></p>
+    <p id="food"></p>
+    <p id="women"></p>
+    <p id="veg"></p>
+    <p id="colorvalues"></p>
+    <p id="points"></p>
+    <p id="froot"></p>
+    <p id="costs"></p>
+    <script type="text/javascript">
+      //array//
+      const car = ["skoda", "swift", "BMW"];
+      document.getElementById("demo").innerHTML = car;
+
+      let favcolors = ["blue", "black", "white"];
+      console.log(favcolors[0]);
+
+      let favcolorss = ["blue", "green", "black"];
+      favcolorss[4] = "pink";
+      console.log(favcolorss);
+
+      const cars = [];
+      cars[0] = "Swift";
+      cars[1] = "skoda";
+      cars[2] = "fortune";
+      document.getElementById("deal").innerHTML = cars;
+
+      //accessing array elements//
+      const vehicle = ["cycle", "plane", "bike"];
+      document.getElementById("vehicle").innerHTML = vehicle[0];
+
+      //changing an array element//
+      const fruits = ["potato", "tomato", "carrot"];
+      fruits[0] = "brinjal";
+      document.getElementById("fruits").innerHTML = fruits;
+
+      //access the full array//
+      const food = ["rice", "sambar", "curd"];
+      document.getElementById("food").innerHTML = food;
+
+      //arrays are objects//
+      const person = ["lavanya", "sri", 23];
+      document.getElementById("women").innerHTML = person[0];
+
+      //object//
+      const persons = { firstName: "John", lastName: "Doe", age: 23 };
+      console.log(persons.age);
+
+      //length//
+      let fruitee = ["Banana", "Orange", "Apple", "Mango"];
+      console.log(fruitee.length);
+
+      //accessing the array element//
+      const veg = ["ladysfinger", "potatos", "tomatos", "brinjal"];
+      document.getElementById("veg").innerHTML = veg[0];
+
+      //accessing the last array element//
+      var colorvalues = ["blue", "Orange", "green", "red"];
+      document.getElementById("colorvalues").innerHTML =
+        colorvalues[colorvalues.length - 3];
+
+      //js new array//
+      const points = [40, 100, 1, 5, 25, 10];
+      document.getElementById("points").innerHTML = points[5];
+
+      //recognize an array//
+      const froot = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("froot").innerHTML = typeof froot;
+      const costs = ["Banana", "Orange", "Apple"];
+      document.getElementById("costs").innerHTML = Array.isArray(costs);
+      //arrow functions//
+      const orders = [
+        { id: 1, item: "smartphones", quantity: 1 },
+        { id: 2, item: "A.C", quantity: 1 },
+        { id: 3, item: "maggie", quantity: 3 },
+      ];
+      let result = orders.find((orders) => orders.item === "maggie");
+
+      console.log(result);
+
+      //js primitive map//
+      const numbers = [1, 2, 3, 4, 5];
+      let final = numbers.map(function (val) {
+        return val * 2;
+      });
+      console.log(final);
+      //reference//
+      const people = [
+        { id: 1, first_name: "lavanyaa", last_name: "sri" },
+        { id: 2, first_name: "sri", last_name: "lavanya" },
+        { id: 3, first_name: "kumar", last_name: "grace" },
+      ];
+      let finel = people.map(function (value) {
+        return value.first_name + value.last_name;
+      });
+      console.log(finel);
+
+      //js spread operator//
+      const shopping_cart = ["maggi", "beans", "chilliflakes"];
+      const additional_cart = ["matchbox", "salt"];
+      let recipe = [...shopping_cart, ...additional_cart];
+      console.log(recipe);
+
+      //spread operator//
+      const price = ["ring", "diamond", "gold"];
+      const jewels = ["metal", "platinum"];
+      let total = [...price, 50, { name: "ram" }, ...jewels];
+      console.log(total);
+
+      //filter//
+      const queue_by_age = [24, 32, 45];
+      let adults = queue_by_age.filter(function (value) {
+        return value >= 18;
+      });
+      console.log("adults:", adults);
+
+      //below 18 age//
+      const queu_by_age = [16, 32, 45];
+      let adult = queu_by_age.filter(function (value) {
+        return value >= 18;
+      });
+      console.log("adult:", adult);
+
+      //even numbers//
+      const numeric = [1, 2, 3, 4, 5];
+      let evenNumbers = numbers.filter(function (value) {
+        return value % 2 == 0;
+      });
+      console.log("Even Numbers", evenNumbers);
+
+      //filters//
+      const cart_items = [
+        { id: 1, item: "Android phone", cost: "6500" },
+        { id: 1, item: "iphone", cost: "30000" },
+        { id: 1, item: "windows phone", cost: "8000" },
+      ];
+      let affordprice = cart_items.filter(function (value) {
+        return value.cost < 10000;
+      });
+      console.log("Affortable phones", affordprice);
+
+      //js foreach//
+      let values = [5, 10, 15, 20, 25];
+      let copies = [];
+      let looparray = function (item, index) {
+        console.log("item is $(item) and index is $(index)");
+        copies.push(item * 2);
+      };
+      values.forEach(looparray);
+      console.log("Original array:", values);
+      console.log("copy array:", copies);
+
+      //arrowfunction//
+      let numeris = [5, 10, 15, 20, 25];
+      let cut = [];
+      let string = ["zara", "jack", "rose"];
+      let letters = ["a", "b", "c", "d", "e", "a", "b", "d"];
+      let count = {};
+
+      numeris.forEach((item, index) => {
+        console.log("item is $(item) and index is $(index)");
+        cut.push(item * 2);
+      });
+      string.forEach((item, index, arr) => {
+        arr[index] = "haii" + item;
+      });
+
+      letters.forEach((item, index, arr) => {
+        if (count[item]) {
+          count[item]++;
+        } else {
+          count[item] = 1;
+        }
+      });
+      console.log("original array:", numeris);
+      console.log("cut array:", cut);
+      console.log("string array:", string);
+      console.log("count object:", count);
+
+      //js reduce//
+      const donations = [45, 78, 95, 65, 4851];
+      donations.reduce(function (previousval, currentval) {
+        console.log("previousval", previousval);
+        console.log("currentval", currentval);
+        return previousval + currentval;
+      });
+      //total //
+      const donationss = [45, 78, 95, 65, 4851];
+      let totaldonations = donations.reduce(function (previousval, currentval) {
+        return previousval + currentval;
+      });
+      console.log("totaldonations", totaldonations);
+      //object//
+      const shopping_cards = [
+        { id: 1, item: "organic milk", cost: 45 },
+        { id: 1, item: "cheese", cost: 20 },
+        { id: 1, item: "panneer", cost: 100 },
+      ];
+      let totalcost = shopping_cards.reduce(function (accumulator, currentval) {
+        return accumulator + currentval.cost;
+      }, 0);
+      console.log("total amount is:", totalcost);
+    </script>
+  </body>
+</html>

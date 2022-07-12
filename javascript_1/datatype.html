@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data type</title>
+  </head>
+  <body onload="window.alert('page successfully loaded');">
+    <p id="first" onmouseover="mouseover()"></p>
+    <p id="sec"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+    <p id="six"></p>
+    <form>
+      <input type="button" name="" onclick="logintest()" value="login" />
+      <input type="button" name="" onclick="test()" value="submit" />
+      <input type="text" id="iii" onfocus="myfocus()" name="" />
+      <input type="text" id="jjj" onkeydown="myfouse()" name="" />
+    </form>
+
+    <script type="text/javascript">
+      //keydown//
+      function myfouse() {
+        document.getElementById("jjj").style.background = "blue";
+      }
+      //onfocus event//
+      function myfocus() {
+        document.getElementById("iii").style.background = "green";
+      }
+      //mouseover//
+      function mouseover() {
+        alert("mouseover successfully");
+      }
+      //onclick event//
+      function logintest() {
+        alert("onclick client");
+      }
+      function test() {
+        document.getElementById("five").innerHTML = "onclick event";
+      }
+      //booleans//
+      let x = 5;
+      let y = 5;
+      let z = 7;
+      if (x == y) {
+        console.log(x == y);
+      }
+
+      if (x == z) {
+        console.log(x == z);
+      }
+
+      //arrays//
+      const cars = ["bmw", 56, "skoda", 85];
+      document.getElementById("first").innerHTML = cars[0];
+
+      //arrays concat//
+      document.getElementById("sec").innerHTML =
+        cars[0] + " " + cars[1] + " " + cars[2] + " " + cars[3];
+
+      //object//
+      let person = {
+        firstname: "lavanya",
+        lastname: "ganesan",
+        age: 23,
+        class: "ece",
+      };
+      document.getElementById("three").innerHTML =
+        person.firstname +
+        " " +
+        person.lastname +
+        " " +
+        person.age +
+        " " +
+        person.class;
+      // typeof operator number//
+      let a = typeof 56;
+      console.log(a);
+
+      //typeof operator string//
+      let b = typeof "lavi";
+      console.log(b);
+
+      //undefined//
+      let menu;
+      console.log(menu);
+
+      //empty values//
+      let hhh = "";
+      console.log(hhh);
+
+      //object methods//
+      let per = {
+        firstname: "lavanya",
+        lastname: "ganesan",
+        age: 23,
+        class: "ece",
+        fullname: function () {
+          return this.firstname + " " + this.age;
+        },
+      };
+      document.getElementById("four").innerHTML = per.fullname();
+
+      //js function syntax//
+      function sum(p1, p2) {
+        return p1 + p2;
+      }
+      let output = sum(34, 43);
+      console.log(output);
+
+      //js parameter syntax//
+      function mytext() {
+        return "my new text";
+      }
+      let newop = mytext();
+      console.log(newop);
+
+      //self invoking unction//
+      (function () {
+        let x = "greetings!!";
+        console.log(x);
+      })();
+
+      //js expression//
+      const res = function (a, b) {
+        return a * b;
+      };
+      let dd = res(4, 3);
+      console.log(dd);
+
+      //arrow functions//
+      const qq = (x, y) => x * y;
+      let inp = qq(5, 6);
+      console.log(inp);
+    </script>
+  </body>
+</html>
